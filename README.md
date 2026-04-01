@@ -24,4 +24,4 @@ Optional: `--image <name>` (default `extraction`), `--context <path>` (default `
 
 Optional: `-Image extraction`, `-Context .`.
 
-`deploy.defaults.example.yaml` at the repo root is only a **template for your own notes**. Copy it to **`deploy.defaults.yaml`** if you want a local, gitignored place to store IDs (the scripts **do not** read that file).
+
