@@ -1,0 +1,25 @@
+[project]
+name = "docling-extraction-cpu"
+version = "0.1.0"
+description = "Docling PDF extraction API (CPU)"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "torch>=2.3.0,<2.8",
+  "docling[easyocr]",
+  "fastapi>=0.115.0",
+  "python-multipart>=0.0.9",
+]
+
+[tool.uv]
+package = false
+# WSL: venv under /mnt/c/ often breaks (pybidi, torchrun, …). Use ./wsl-sync.sh or:
+#   UV_PROJECT_ENVIRONMENT=$HOME/.venvs/docling-extraction-cpu UV_LINK_MODE=copy uv sync
+link-mode = "copy"
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
